@@ -1,0 +1,12 @@
+.homeSquare {
+    background-color: var(--accent);
+    color: var(--text-h);
+    font-size: calc(30vh - 80px);
+    width: 60%;
+    margin: 0 auto;
+    min-height: calc(70vh - 80px);
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
