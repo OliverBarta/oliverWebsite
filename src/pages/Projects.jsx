@@ -1,4 +1,8 @@
 import './Projects.css'
+import activeAgingImg from '../assets/activeAgingOntarioFindPrograms.png'
+import bookSiteImg from '../assets/bookSiteHome.png'
+import nothinggImg from '../assets/nothinggListing.png'
+import ufcFighterImg from '../assets/ufcFighterComparison.png'
 
 const projects = [
   {
@@ -7,6 +11,7 @@ const projects = [
     tags: ['React', 'CSS', 'Vite', 'Health-tech', 'Web-scraping'],
     link: 'https://oliverbarta.github.io/moveStrong/',
     github: 'https://github.com/OliverBarta/moveStrong',
+    image: activeAgingImg,
   },
   {
     title: 'Book Site',
@@ -14,6 +19,7 @@ const projects = [
     tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
     link: 'book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
+    image: bookSiteImg,
   },
   {
     title: 'NOTHINGG',
@@ -21,13 +27,15 @@ const projects = [
     tags: ['Node.js', 'JavaScript', 'PostgreSQL', 'supabase'],
     link: 'https://oliverbarta.github.io/AlistairWebsite/',
     github: 'https://github.com/OliverBarta/AlistairWebsite',
+    image: nothinggImg,
   },
   {
     title: 'UFC Fighter',
-    desc: 'A comprehensive web app for exploring UFC fighters, their stats, fight history, and rankings. Built with a modern stack for fast, responsive performance.',
-    tags: ['React', 'API', 'Web-scraping'],
+    desc: 'A comprehensive web app for exploring a database of every UFC fighter, their stats, fight history, and rankings. With images of fighters found using the Wikipedia API.',
+    tags: ['React', 'API'],
     link: 'https://oliverbarta.github.io/UFC-fighter/',
     github: 'https://github.com/OliverBarta/UFC-fighter',
+    image: ufcFighterImg,
   },
 ]
 
@@ -77,13 +85,7 @@ function Projects() {
               </div>
             </div>
             <div className="project-image">
-              <div className="project-image-placeholder">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </div>
+              <img className='project-image-placeholder' src={project.image} alt={`${project.title} screenshot`} />
             </div>
           </article>
         ))}
