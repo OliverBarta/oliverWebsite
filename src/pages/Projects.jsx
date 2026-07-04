@@ -17,7 +17,7 @@ const projects = [
     title: 'Book Site',
     desc: 'A full-stack book discovery application featuring an automated backend and an interactive frontend. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend dynamically displays the collection, while browser LocalStorage is utilized to seamlessly track user progress and saved favorites without requiring a heavy authentication system.',
     tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
-    link: 'book-site-six-zeta.vercel.app',
+    link: 'https://book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
     image: bookSiteImg,
   },
