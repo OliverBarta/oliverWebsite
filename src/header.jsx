@@ -1,27 +1,36 @@
+import { useState, useEffect } from 'react'
 import './header.css'
-import githubImg from './assets/githubIcon.png'
-import linkedInImg from './assets/linkedinIcon.png'
-import downloadImg from './assets/downloadIcon.png'
-import oliverResume from './assets/Oliver_Barta_s_Resume.pdf'
+
+const navItems = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
+]
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <nav className="nav">
+        <a href="#home" className="logo">OB</a>
+        <ul className="nav-links">
+          {navItems.map(item => (
+            <li key={item.href}>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
         </ul>
-        <div className='links'>
-            <a href="https://github.com/OliverBarta" target="_blank" rel="noreferrer" title="GitHub"><img src={githubImg} alt="GitHub" /></a>
-            <a href="https://www.linkedin.com/in/oliverbarta/" target="_blank" rel="noreferrer" title="LinkedIn"><img src={linkedInImg} alt="LinkedIn" /></a>
-            <a href={oliverResume} download="Oliver_Barta_Resume.pdf" title="Download Resume"><img src={downloadImg} alt="Download Resume"></img></a>
-        </div>
       </nav>
     </header>
   )
 }
-  
+
 export default Header
