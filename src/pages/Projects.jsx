@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'Active Aging Ontario',
     desc: 'Active Aging Ontario (moveStrong) is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness sources.',
-    tags: ['React', 'CSS', 'Vite', 'Health-tech', 'Web-scraping'],
+    tags: ['React', 'Vite', 'Health-tech', 'Web-scraping'],
     link: 'https://oliverbarta.github.io/moveStrong/',
     github: 'https://github.com/OliverBarta/moveStrong',
     image: activeAgingImg,
@@ -32,7 +32,7 @@ const projects = [
   {
     title: 'UFC Fighter',
     desc: 'A comprehensive web app for exploring a database of every UFC fighter, their stats, fight history, and rankings. With images of fighters found using the Wikipedia API.',
-    tags: ['React', 'API'],
+    tags: ['API', 'CSV parsing'],
     link: 'https://oliverbarta.github.io/UFC-fighter/',
     github: 'https://github.com/OliverBarta/UFC-fighter',
     image: ufcFighterImg,
