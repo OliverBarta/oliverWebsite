@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: 'Book Site',
-    desc: 'A full-stack book discovery application featuring an automated backend and an interactive frontend. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend dynamically displays the collection, while browser LocalStorage is utilized to seamlessly track user progress and saved favorites without requiring a heavy authentication system.',
+    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage a users progress in a book and saves favorites without requiring a heavy authentication system.',
     tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
     link: 'https://book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
@@ -45,7 +45,7 @@ function Projects() {
       <span className="section-label">Projects</span>
       <h2 className="section-title">Things I've built</h2>
       <p className="section-subtitle">
-        Some projects I've worked on. Each one taught me something new.
+        Some projects I've worked on.
       </p>
       <div className="projects-list">
         {projects.map((project, i) => (
