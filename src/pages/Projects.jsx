@@ -7,7 +7,7 @@ import ufcFighterImg from '../assets/ufcFighterComparison.png'
 const projects = [
   {
     title: 'Active Aging Ontario',
-    desc: 'Active Aging Ontario (moveStrong) is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness sources.',
+    desc: 'Active Aging Ontario (moveStrong) is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness.',
     tags: ['React', 'Vite', 'Health-tech', 'Web-scraping'],
     link: 'https://oliverbarta.github.io/moveStrong/',
     github: 'https://github.com/OliverBarta/moveStrong',
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     title: 'NOTHINGG',
-    desc: 'A full-stack e-commerce clothing website using a Node.js backend, HTML/CSS frontend, and Supabase database. Implemented a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products via a custom management interface.',
+    desc: 'A full-stack e-commerce clothing website using a Node.js backend, HTML/CSS frontend, and Supabase database. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products. The admin system built in a custom management interface so admins never have to interact with the database or any code.',
     tags: ['Node.js', 'JavaScript', 'PostgreSQL', 'supabase'],
     link: 'https://oliverbarta.github.io/AlistairWebsite/',
     github: 'https://github.com/OliverBarta/AlistairWebsite',

@@ -13,7 +13,7 @@ function Home() {
         <h1 className="hero-name">Oliver Barta</h1>
         <h2 className="hero-tagline">I build things for the web</h2>
         <p className="hero-desc">
-          A passionate developer crafting clean, modern, and impactful digital experiences.
+          A developer making impactful digital experiences.
           Focused on building full-stack applications that make a difference.
         </p>
         <div className="hero-actions">

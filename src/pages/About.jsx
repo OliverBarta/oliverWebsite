@@ -14,16 +14,13 @@ function About() {
       <div className="about-grid">
         <div className="about-text">
           <p>
-            I'm a developer based in Waterloo, Ontario, currently studying Systems Design Engineering at the University of Waterloo.
-            I love turning complex problems into simple, beautiful, and intuitive solutions.
+          I'm a Systems Design Engineering student at the University of Waterloo. I love learning new technologies and building things that are useful, fun, or just interesting to me.
           </p>
           <p>
-            When I'm not coding, you'll find me exploring new technologies, contributing to open source,
-            or working on side projects that push the boundaries of what I can create.
+          Recently I’ve been doing a lot of full stack web development. I’ve been using React, building web-scrapers, using APIs, and using databases like Supabase.
           </p>
           <p>
-            I'm passionate about building applications that are not only functional but also delightful
-            to use. Every line of code is an opportunity to make something great.
+          When I'm not coding, I'm usually playing soccer, building PCs, or studying for an upcoming test.
           </p>
         </div>
         <div className="about-skills">
