@@ -6,6 +6,7 @@
   z-index: 100;
   padding: 16px 24px;
   background: transparent;
+  border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
 

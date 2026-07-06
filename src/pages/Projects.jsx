@@ -6,8 +6,8 @@ import ufcFighterImg from '../assets/ufcFighterComparison.png'
 
 const projects = [
   {
-    title: 'Active Aging Ontario',
-    desc: 'Active Aging Ontario (moveStrong) is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness.',
+    title: 'Move Strong',
+    desc: 'Move Strong is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness.',
     tags: ['React', 'Vite', 'Health-tech', 'Web-scraping'],
     link: 'https://oliverbarta.github.io/moveStrong/',
     github: 'https://github.com/OliverBarta/moveStrong',
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: 'Book Site',
-    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage a users progress in a book and saves favorites without requiring a heavy authentication system.',
+    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage saves a users progress in a book and saves favorites.',
     tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
     link: 'https://book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
@@ -85,7 +85,9 @@ function Projects() {
               </div>
             </div>
             <div className="project-image">
-              <img className='project-image-placeholder' src={project.image} alt={`${project.title} screenshot`} />
+              <a href={project.link} target="_blank" rel="noreferrer">
+                <img className='project-image-placeholder' src={project.image} alt={`${project.title} screenshot`} />
+              </a>
             </div>
           </article>
         ))}
