@@ -23,10 +23,10 @@ const projects = [
   },
   {
     title: 'NOTHINGG',
-    desc: 'A full-stack e-commerce clothing website using a Node.js backend, HTML/CSS frontend, and Supabase database. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products. The admin system built in a custom management interface so admins never have to interact with the database or any code.',
-    tags: ['Node.js', 'JavaScript', 'PostgreSQL', 'supabase'],
-    link: 'https://oliverbarta.github.io/AlistairWebsite/',
-    github: 'https://github.com/OliverBarta/AlistairWebsite',
+    desc: 'A full-stack e-commerce clothing website using a Node.js backend, React frontend, and Supabase database. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products. The admin system built in a custom management interface so admins never have to interact with the database or any code.',
+    tags: ['React', 'Vite', 'Node.js', 'JavaScript', 'PostgreSQL', 'supabase'],
+    link: 'https://oliverbarta.github.io/NOTHINGG/',
+    github: 'https://github.com/OliverBarta/NOTHINGG',
     image: nothinggImg,
   },
   {
