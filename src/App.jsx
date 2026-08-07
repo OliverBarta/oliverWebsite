@@ -1,18 +1,19 @@
 import Home from './pages/Home'
-import About from './pages/About'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Header from './header'
+import Slideshow from './slideshow'
 import './App.css'
 
 function App() {
   return (
     <div className="app">
-      <Header />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      {/* <Header /> */}
+      <Slideshow>
+        <Home />
+        <Projects />
+        <Contact />
+      </Slideshow>
     </div>
   )
 }

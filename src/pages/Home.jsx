@@ -1,23 +1,24 @@
 import './Home.css'
+import { scrollToId } from '../scrollToId'
 
 function Home() {
   return (
-    <section id="home" className="hero">
+    <section id="home" className="slide hero">
       <div className="hero-bg">
         <div className="hero-blob hero-blob-1" />
         <div className="hero-blob hero-blob-2" />
         <div className="hero-blob hero-blob-3" />
       </div>
       <div className="hero-content">
-        <p className="hero-greeting">Hi, my name is</p>
-        <h1 className="hero-name">Oliver Barta</h1>
-        <h2 className="hero-tagline">I build things for the web</h2>
-        <p className="hero-desc">
-          A Engineering student at the University of Waterloo. Currently focused on building full-stack applications that make a difference.
+        <p className="hero-greeting" data-slide-in>Hi, my name is</p>
+        <h1 className="hero-name" data-slide-in>Oliver Barta</h1>
+        {/* <h2 className="hero-tagline" data-slide-in>Engineering student at the University of Waterloo</h2> */}
+        <p className="hero-desc" data-slide-in>
+          Systems Design Engineering student at the University of Waterloo
         </p>
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary">View my work</a>
-          <a href="#contact" className="btn btn-secondary">Get in touch</a>
+        <div className="hero-actions" data-slide-in>
+          <a href="#projects" onClick={e => { e.preventDefault(); scrollToId('projects') }} className="btn btn-primary">View my work</a>
+          <a href="#contact" onClick={e => { e.preventDefault(); scrollToId('contact') }} className="btn btn-secondary">Get in touch</a>
         </div>
       </div>
     </section>
