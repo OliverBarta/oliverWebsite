@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import React from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -10,6 +10,21 @@ function Slideshow({ children }) {
   const rootRef = useRef(null)
   const trackRef = useRef(null)
   const dotsRef = useRef([])
+  const stRef = useRef(null)
+  const [index, setIndex] = useState(0)
+
+  const goToSlide = (target) => {
+    const root = rootRef.current
+    if (!root) return
+    const slides = gsap.utils.toArray('.slide', root)
+    const last = slides.length - 1
+    if (!slides.length) return
+    const clamped = Math.max(0, Math.min(last, target))
+    const st = stRef.current || ScrollTrigger.getAll().find(trigger => trigger.trigger === root)
+    const range = st ? st.end - st.start : last * window.innerHeight
+    const top = (st ? st.start : 0) + (clamped / last) * range
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
 
   useEffect(() => {
     const root = rootRef.current
@@ -45,9 +60,11 @@ function Slideshow({ children }) {
             anticipatePin: 1,
             invalidateOnRefresh: true,
             onUpdate: (self) => {
+              stRef.current = self
               const range = self.end - self.start
               const raw = range ? (window.scrollY - self.start) / range : 0
               const active = Math.max(0, Math.min(last, Math.round(raw * last)))
+              setIndex(active)
               dotEls.forEach((dot, i) => {
                 if (dot) dot.classList.toggle('active', i === active)
               })
@@ -109,11 +126,32 @@ function Slideshow({ children }) {
       <div className="slides-track" ref={trackRef}>
         {children}
       </div>
-      {/* <div className="slide-progress" aria-hidden="true">
-        {Array.from({ length: React.Children.count(children) }).map((_, i) => (
-          <span key={i} className="slide-dot" ref={el => { dotsRef.current[i] = el }} />
-        ))}
-      </div> */}
+      {React.Children.count(children) > 1 && (
+        <div className="slide-arrows" aria-hidden="true">
+          <button
+            type="button"
+            className="slide-arrow slide-arrow--prev"
+            onClick={() => goToSlide(index - 1)}
+            disabled={index === 0}
+            aria-label="Previous slide"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="18 15 12 9 6 15" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className="slide-arrow slide-arrow--next"
+            onClick={() => goToSlide(index + 1)}
+            disabled={index === React.Children.count(children) - 1}
+            aria-label="Next slide"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
+      )}
     </section>
   )
 }

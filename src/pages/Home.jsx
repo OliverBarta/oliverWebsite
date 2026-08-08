@@ -12,7 +12,6 @@ function Home() {
       <div className="hero-content">
         <p className="hero-greeting" data-slide-in>Hi, my name is</p>
         <h1 className="hero-name" data-slide-in>Oliver Barta</h1>
-        {/* <h2 className="hero-tagline" data-slide-in>Engineering student at the University of Waterloo</h2> */}
         <p className="hero-desc" data-slide-in>
           Systems Design Engineering student at the University of Waterloo
         </p>

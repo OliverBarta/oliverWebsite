@@ -1,46 +1,9 @@
 import './Projects.css'
-import activeAgingImg from '../assets/activeAgingOntarioFindPrograms.png'
-import bookSiteImg from '../assets/bookSiteHome.png'
-import nothinggImg from '../assets/nothinggListing.png'
-import ufcFighterImg from '../assets/ufcFighterComparison.png'
 
-const projects = [
-  {
-    title: 'Move Strong',
-    desc: 'Move Strong is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness.',
-    tags: ['React', 'Vite', 'Health-tech', 'Web-scraping'],
-    link: 'https://oliverbarta.github.io/moveStrong/',
-    github: 'https://github.com/OliverBarta/moveStrong',
-    image: activeAgingImg,
-  },
-  {
-    title: 'Book Site',
-    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage saves a users progress in a book and saves favorites.',
-    tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
-    link: 'https://book-site-six-zeta.vercel.app',
-    github: 'https://github.com/OliverBarta/Book-Site',
-    image: bookSiteImg,
-  },
-  {
-    title: 'NOTHINGG',
-    desc: 'A full-stack e-commerce clothing website using a Node.js backend, React frontend, and Supabase database. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products. The admin system built in a custom management interface so admins never have to interact with the database or any code.',
-    tags: ['React', 'Vite', 'Node.js', 'JavaScript', 'PostgreSQL', 'supabase'],
-    link: 'https://oliverbarta.github.io/NOTHINGG/',
-    github: 'https://github.com/OliverBarta/NOTHINGG',
-    image: nothinggImg,
-  },
-  {
-    title: 'UFC Fighter',
-    desc: 'A comprehensive web app for exploring a database of every UFC fighter, their stats, fight history, and rankings. With images of fighters found using the Wikipedia API.',
-    tags: ['API', 'CSV parsing'],
-    link: 'https://oliverbarta.github.io/UFC-fighter/',
-    github: 'https://github.com/OliverBarta/UFC-fighter',
-    image: ufcFighterImg,
-  },
-]
-
-function ProjectSlide({ project, index }) {
+export function ProjectSlide({ project, index }) {
   const number = String(index + 1).padStart(2, '0')
+  const orientation = project.imageOrientation === 'horizontal' ? 'horizontal' : 'vertical'
+  const gridCount = orientation === 'vertical' && [3, 4].includes(project.images.length) ? project.images.length : 0
   return (
     <section className="slide project-slide" id={index === 0 ? 'projects' : undefined}>
       <div className={`project-slide-content ${index % 2 === 1 ? 'reverse' : ''}`}>
@@ -74,24 +37,16 @@ function ProjectSlide({ project, index }) {
             )}
           </div>
         </div>
-        <div className="project-slide-image" data-slide-in>
-          <a href={project.link} target="_blank" rel="noreferrer">
-            <img src={project.image} alt={`${project.title} screenshot`} />
-          </a>
+        <div className={`project-slide-images ${orientation}${gridCount ? ` grid grid-${gridCount}` : ''}`} data-slide-in>
+          {project.images.map((image, i) => (
+            <a key={i} target="_blank" rel="noreferrer" className="project-slide-image">
+              <img src={image} alt={`${project.title} screenshot ${i + 1}`} />
+            </a>
+          ))}
         </div>
       </div>
     </section>
   )
 }
 
-function Projects() {
-  return (
-    <>
-      {projects.map((project, i) => (
-        <ProjectSlide key={project.title} project={project} index={i} />
-      ))}
-    </>
-  )
-}
-
-export default Projects
+export default ProjectSlide
