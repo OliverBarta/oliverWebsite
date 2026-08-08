@@ -8,7 +8,7 @@ function Contact() {
         <span className="section-label" data-slide-in>Contact</span>
         <h2 className="section-title" data-slide-in>Get in touch</h2>
         <p className="section-subtitle" data-slide-in>
-          Whether you have a project in mind, a question, or just want to say hi,
+          Whether you have a project idea, a question, or just want to say hi,
           I'd love to hear from you.
         </p>
         <a href="mailto:obarta@uwaterloo.ca" className="contact-email" data-slide-in>
