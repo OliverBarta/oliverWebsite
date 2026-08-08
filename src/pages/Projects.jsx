@@ -1,8 +1,109 @@
+import { useCallback, useEffect, useState } from 'react'
 import './Projects.css'
+
+export function ProjectCarousel({ project }) {
+  const [index, setIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const [ratio, setRatio] = useState(null)
+  const count = project.images.length
+  const current = ((index % count) + count) % count
+
+  useEffect(() => {
+    const img = new Image()
+    img.onload = () => setRatio(img.naturalWidth / img.naturalHeight)
+    img.src = project.images[0]
+  }, [project.images])
+
+  const go = useCallback(dir => setIndex(i => i + dir), [])
+
+  useEffect(() => {
+    if (count <= 1 || paused) return
+    const id = setInterval(() => go(1), 8000)
+    return () => clearInterval(id)
+  }, [count, paused, go])
+
+  const cardStyle = rel => {
+    if (rel === 0) return { '--x': '0%', '--y': '0px', '--scale': 1, '--opacity': 1, '--z': 30 }
+    if (rel === 1) return { '--x': '100%', '--y': '18px', '--scale': 0.9, '--opacity': 0.92, '--z': 20 }
+    if (rel === -1) return { '--x': '-160%', '--y': '0px', '--scale': 0.85, '--opacity': 0, '--z': 10 }
+    return { '--x': `${rel * 100}%`, '--y': '0px', '--scale': 0.85, '--opacity': 0, '--z': 10 }
+  }
+
+  const slots = []
+  for (let j = index - 1; j <= index + 2; j++) {
+    const rel = j - index
+    const image = project.images[((j % count) + count) % count]
+    slots.push({ key: j, image, rel })
+  }
+
+  return (
+    <div
+      className="project-carousel"
+      onClick={() => go(1)}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="project-carousel-stack" style={{ aspectRatio: ratio || 4 / 3 }}>
+        {slots.map(({ key, image, rel }) => (
+          <a
+            key={key}
+            className="project-carousel-card"
+            target="_blank"
+            rel="noreferrer"
+            data-animate={rel === 0 || rel === 1 || rel === -1 ? 1 : 0}
+            style={cardStyle(rel)}
+          >
+            <img src={image} alt={`${project.title} screenshot ${(((key % count) + count) % count) + 1}`} />
+          </a>
+        ))}
+        <button
+          type="button"
+          className="project-carousel-arrow prev"
+          onClick={e => {
+            e.stopPropagation()
+            go(-1)
+          }}
+          aria-label="Previous image"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          className="project-carousel-arrow next"
+          onClick={e => {
+            e.stopPropagation()
+            go(1)
+          }}
+          aria-label="Next image"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+      <div className="project-carousel-dots">
+        {project.images.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            className={`project-carousel-dot${i === current ? ' active' : ''}`}
+            onClick={e => {
+              e.stopPropagation()
+              go(i - current)
+            }}
+            aria-label={`Show image ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export function ProjectSlide({ project, index }) {
   const number = String(index + 1).padStart(2, '0')
-  const orientation = project.imageOrientation === 'horizontal' ? 'horizontal' : 'vertical'
+  const orientation = project.imageOrientation === 'horizontal' ? 'horizontal' : project.imageOrientation === 'carousel' ? 'carousel' : 'vertical'
   const gridCount = orientation === 'vertical' && [3, 4].includes(project.images.length) ? project.images.length : 0
   return (
     <section className="slide project-slide" id={index === 0 ? 'projects' : undefined}>
@@ -38,11 +139,13 @@ export function ProjectSlide({ project, index }) {
           </div>
         </div>
         <div className={`project-slide-images ${orientation}${gridCount ? ` grid grid-${gridCount}` : ''}`} data-slide-in>
-          {project.images.map((image, i) => (
-            <a key={i} target="_blank" rel="noreferrer" className="project-slide-image">
-              <img src={image} alt={`${project.title} screenshot ${i + 1}`} />
-            </a>
-          ))}
+          {orientation === 'carousel'
+            ? <ProjectCarousel project={project} />
+            : project.images.map((image, i) => (
+                <a key={i} target="_blank" rel="noreferrer" className="project-slide-image">
+                  <img src={image} alt={`${project.title} screenshot ${i + 1}`} />
+                </a>
+              ))}
         </div>
       </div>
     </section>

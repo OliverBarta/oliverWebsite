@@ -1,5 +1,7 @@
 import activeAgingImg from '../assets/activeAgingOntarioFindPrograms.png'
 import bookSiteImg from '../assets/bookSiteHome.png'
+import bookSiteLoginPage from '../assets/BookSiteLoginPage.png'
+import bookSiteShadowSlave from '../assets/BookSiteShadowSlave.png'
 import nothinggImg from '../assets/nothinggListing.png'
 import ufcFighterImg from '../assets/ufcFighterComparison.png'
 import workoutAppRoutine from '../assets/WorkoutAppRoutineImage.PNG'
@@ -9,17 +11,17 @@ import workoutAppAddExercise from '../assets/WorkoutAppAddExerciseImage.PNG'
 export const projects = [
   {
     title: 'Book Site',
-    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage saves a users progress in a book and saves favorites.',
+    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage and the supabase database saves a users progress in a book and saves favorites.',
     tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
     link: 'https://book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
-    images: [bookSiteImg],
-    imageOrientation: 'vertical',
+    images: [bookSiteImg,bookSiteShadowSlave],
+    imageOrientation: 'carousel',
   },
   {
     title: 'Workout App',
-    desc: 'A full-featured iOS workout app built with SwiftUI and SwiftData, letting users build custom routines, track sets and rest timers during live workouts, log completed sessions to history, and follow friends to see their activity — with a Supabase backend for accounts, syncing, and a social leaderboard.',
-    tags: ['Swift','XCODE','PostgreSQL','supabase'],
+    desc: 'A full-featured iOS workout app built with Swift, letting users build custom routines, track sets and rest timers during live workouts, log completed sessions to history, and follow friends to see their activity or copy their workouts — with a Supabase backend for accounts, syncing, and a social leaderboard.',
+    tags: ['Swift','Xcode','PostgreSQL','supabase'],
     link: '',
     github: 'https://github.com/OliverBarta/WorkoutApp',
     images: [workoutAppRoutine, workoutAppExplore, workoutAppAddExercise],
