@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     title: 'Workout App',
-    desc: 'A full-featured iOS workout app built with Swift, letting users build custom routines, track sets and rest timers during live workouts, log completed sessions to history, and follow friends to see their activity or copy their workouts — with a Supabase backend for accounts, syncing, and a social leaderboard.',
+    desc: 'Coming soon - A full-featured iOS workout app built with Swift, letting users build custom routines, track sets and rest timers during live workouts, log completed sessions to history, and follow friends to see their activity or copy their workouts — with a Supabase backend for accounts, syncing, and a social leaderboard.',
     tags: ['Swift','Xcode','PostgreSQL','supabase'],
     link: '',
     github: 'https://github.com/OliverBarta/WorkoutApp',

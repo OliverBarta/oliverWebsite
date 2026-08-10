@@ -14,7 +14,7 @@ function App() {
         {projects.map((project, i) => (
           <ProjectSlide key={project.title} project={project} index={i} />
         ))}
-        <Contact />
+        {/* <Contact /> */}
       </Slideshow>
     </div>
   )
