@@ -107,7 +107,7 @@ export function ProjectSlide({ project, index }) {
   const gridCount = orientation === 'vertical' && [3, 4].includes(project.images.length) ? project.images.length : 0
   return (
     <section className="slide project-slide" id={index === 0 ? 'projects' : undefined}>
-      <div className={`project-slide-content ${index % 2 === 1 ? 'reverse' : ''}`}>
+      <div className="project-slide-content">
         <div className="project-slide-body">
           <span className="section-label" data-slide-in>Project {number}</span>
           <h2 className="project-slide-title" data-slide-in>{project.title}</h2>

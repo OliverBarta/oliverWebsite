@@ -27,19 +27,10 @@
   background: var(--bg-primary);
 }
 
-.project-slide-content.reverse .project-slide-body::before {
-  left: auto;
-  right: -8vw;
-}
-
 .project-slide-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
+  color: var(--text-primary);
   margin-bottom: 20px;
   line-height: 1.1;
 }
@@ -61,8 +52,8 @@
 .project-tag {
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--accent-1);
-  background: rgba(168, 85, 247, 0.08);
+  color: var(--accent);
+  background: var(--accent-soft);
   padding: 4px 10px;
   border-radius: 4px;
 }
@@ -114,8 +105,7 @@
 
 .project-slide-image:hover img {
   transform: translateY(-6px);
-  border-color: var(--accent-1);
-  box-shadow: 0 16px 50px rgba(168, 85, 247, 0.25);
+  border-color: var(--accent);
 }
 
 .project-slide-images.horizontal {
@@ -172,8 +162,7 @@
 }
 
 .project-carousel-card:hover {
-  border-color: var(--accent-1);
-  box-shadow: 0 16px 50px rgba(168, 85, 247, 0.25);
+  border-color: var(--accent);
 }
 
 .project-carousel-arrow {
@@ -188,7 +177,7 @@
   justify-content: center;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: rgba(10, 10, 20, 0.55);
+  background: rgba(0, 0, 0, 0.6);
   color: var(--text-primary);
   cursor: pointer;
   z-index: 120;
@@ -196,8 +185,8 @@
 }
 
 .project-carousel-arrow:hover {
-  background: rgba(168, 85, 247, 0.35);
-  border-color: var(--accent-1);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .project-carousel-arrow.prev {
@@ -231,7 +220,7 @@
 }
 
 .project-carousel-dot.active {
-  background: var(--accent-1);
+  background: var(--accent);
   transform: scale(1.25);
 }
 
@@ -254,29 +243,11 @@
   justify-self: center;
 }
 
-.project-slide-content.reverse {
-  grid-template-columns: 75fr 35fr;
-}
-
-.project-slide-content.reverse .project-slide-body {
-  order: 2;
-}
-
-.project-slide-content.reverse .project-slide-images {
-  order: 1;
-}
-
 @media (max-width: 767px) {
-  .project-slide-content,
-  .project-slide-content.reverse {
+  .project-slide-content {
     grid-template-columns: 1fr;
     gap: 28px;
     height: auto;
-  }
-
-  .project-slide-content.reverse .project-slide-body,
-  .project-slide-content.reverse .project-slide-images {
-    order: 0;
   }
 
   .project-slide-body {

@@ -14,12 +14,7 @@
   display: inline-block;
   font-size: 1.8rem;
   font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: gradientShift 5s ease infinite;
+  color: var(--accent);
   margin: 32px 0 40px;
   transition: opacity 0.2s;
 }
@@ -49,10 +44,9 @@
 }
 
 .contact-social-link:hover {
-  border-color: var(--accent-1);
-  color: var(--accent-1) !important;
+  border-color: var(--accent);
+  color: var(--accent) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
 }
 
 @media (max-width: 768px) {

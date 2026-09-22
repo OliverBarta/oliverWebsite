@@ -9,47 +9,6 @@
   max-width: none;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.hero-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
-}
-
-.hero-blob-1 {
-  width: 500px;
-  height: 500px;
-  background: var(--accent-1);
-  top: -10%;
-  right: -10%;
-  animation: float 8s ease-in-out infinite;
-}
-
-.hero-blob-2 {
-  width: 400px;
-  height: 400px;
-  background: var(--accent-2);
-  bottom: -10%;
-  left: -10%;
-  animation: float 10s ease-in-out infinite reverse;
-}
-
-.hero-blob-3 {
-  width: 300px;
-  height: 300px;
-  background: var(--accent-3);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: float 12s ease-in-out infinite;
-}
-
 .hero-content {
   position: relative;
   z-index: 1;
@@ -60,19 +19,14 @@
 .hero-greeting {
   font-family: var(--mono);
   font-size: 1rem;
-  color: var(--accent-1);
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
 .hero-name {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% 200%;
-  animation: gradientShift 5s ease infinite;
+  color: var(--text-primary);
   margin-bottom: 12px;
   line-height: 1.1;
 }
@@ -110,15 +64,13 @@
 }
 
 .btn-primary {
-  background: var(--gradient);
-  color: white !important;
-  background-size: 200% 200%;
-  animation: gradientShift 5s ease infinite;
+  background: var(--accent);
+  color: var(--text-primary) !important;
 }
 
 .btn-primary:hover {
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
 }
 
 .btn-secondary {
@@ -128,9 +80,8 @@
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-1);
+  border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.1);
 }
 
 .hero-email {
@@ -138,7 +89,7 @@
   margin-top: 4px;
   font-family: var(--mono);
   font-size: 1rem;
-  color: var(--accent-1);
+  color: var(--accent);
   transition: opacity 0.2s;
 }
 
@@ -168,10 +119,9 @@
 }
 
 .hero-social-link:hover {
-  border-color: var(--accent-1);
-  color: var(--accent-1) !important;
+  border-color: var(--accent);
+  color: var(--accent) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
 }
 
 @media (max-width: 768px) {

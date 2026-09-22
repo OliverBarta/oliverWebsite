@@ -5,11 +5,6 @@ import oliverResume from '../assets/Oliver_Barta_s_Resume.pdf'
 function Home() {
   return (
     <section id="home" className="slide hero">
-      <div className="hero-bg">
-        <div className="hero-blob hero-blob-1" />
-        <div className="hero-blob hero-blob-2" />
-        <div className="hero-blob hero-blob-3" />
-      </div>
       <div className="hero-content">
         {/* <p className="hero-greeting" data-slide-in>Hi, my name is</p> */}
         <h1 className="hero-name" data-slide-in>Oliver Barta</h1>

@@ -1,18 +1,16 @@
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
+  --bg-primary: #000000;
+  --bg-secondary: #0f0f0f;
   --bg-card: rgba(255, 255, 255, 0.03);
   --bg-card-hover: rgba(255, 255, 255, 0.06);
-  --text-primary: #f0f0f5;
-  --text-secondary: #8888a0;
-  --text-muted: #55556a;
-  --accent-1: #a855f7;
-  --accent-2: #ec4899;
-  --accent-3: #06b6d4;
-  --gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
-  --gradient-2: linear-gradient(135deg, var(--accent-1), var(--accent-3));
-  --border: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(255, 255, 255, 0.12);
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #6b6b6b;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.12);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 255, 255, 0.24);
   --shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   --glass: rgba(255, 255, 255, 0.03);
 
@@ -49,8 +47,8 @@ body {
 }
 
 ::selection {
-  background: var(--accent-1);
-  color: white;
+  background: var(--accent);
+  color: var(--text-primary);
 }
 
 ::-webkit-scrollbar {
@@ -79,13 +77,13 @@ p {
 }
 
 a {
-  color: var(--accent-1);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--accent-2);
+  color: var(--accent-hover);
 }
 
 section {
@@ -103,20 +101,4 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
-  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.3); }
 }
