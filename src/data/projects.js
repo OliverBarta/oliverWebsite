@@ -11,17 +11,17 @@ import workoutAppAddExercise from '../assets/WorkoutAppAddExerciseImage.PNG'
 export const projects = [
   {
     title: 'Book Site',
-    desc: 'A full-stack book reading application. The app uses a custom web scraper to feed book data into a Supabase database. The React frontend displays the collection, while browser LocalStorage and the supabase database saves a users progress in a book and saves favorites.',
-    tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL', 'supabase'],
+    desc: 'A full-stack book reading site. I made a web scraper to get book data and put it into a Supabase database. All I need to add a new book is a link. The React frontend displays the collection, while browser LocalStorage and the Supabase database saves a users progress in a book and saves favorites. The Supabase database also stores all the comments and reactions (likes) to comments.',
+    tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL'],
     link: 'https://book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
-    images: [bookSiteImg,bookSiteShadowSlave],
+    images: [bookSiteImg,bookSiteShadowSlave, bookSiteLoginPage],
     imageOrientation: 'carousel',
   },
   {
     title: 'Workout App',
-    desc: 'Coming soon - A full-featured iOS workout app built with Swift, letting users build custom routines, track sets and rest timers during live workouts, log completed sessions to history, and follow friends to see their activity or copy their workouts — with a Supabase backend for accounts, syncing, and a social leaderboard.',
-    tags: ['Swift','Xcode','PostgreSQL','supabase'],
+    desc: 'An iOS workout app built with Swift. With a Supabase backend to allow users to see, react to, comment, and copy other people’s workout routines. I made a following system, so you can find friends, follow them, then see leaderboards for each exercise with all your friends competing.',
+    tags: ['Swift','Xcode','PostgreSQL'],
     link: '',
     github: 'https://github.com/OliverBarta/WorkoutApp',
     images: [workoutAppRoutine, workoutAppExplore, workoutAppAddExercise],
@@ -29,7 +29,7 @@ export const projects = [
   },
   {
     title: 'Move Strong',
-    desc: 'Move Strong is a curated, searchable directory of exercise programs for older adults in Ontario, Canada. Built as a React app, it helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs filtered by city, goals, budget, and health conditions. The dataset combines information scraped from Healthline and GoodLife Fitness.',
+    desc: 'Move Strong is a directory of exercise programs for older adults in Ontario, Canada. It helps older adults, clinicians, and caregivers find community exercise classes, virtual coaching, and disease-specific programs. The dataset combines information scraped from Healthline and GoodLife Fitness.',
     tags: ['React', 'Vite', 'Health-tech', 'Web-scraping'],
     link: 'https://oliverbarta.github.io/moveStrong/',
     github: 'https://github.com/OliverBarta/moveStrong',
@@ -38,8 +38,8 @@ export const projects = [
   },
   {
     title: 'NOTHINGG',
-    desc: 'A full-stack e-commerce clothing website using a Node.js backend, React frontend, and Supabase database. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products. The admin system built in a custom management interface so admins never have to interact with the database or any code.',
-    tags: ['React', 'Vite', 'Node.js', 'JavaScript', 'PostgreSQL', 'supabase'],
+    desc: 'An e-commerce clothing website. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products.',
+    tags: ['React', 'Vite', 'Node.js', 'JavaScript', 'PostgreSQL'],
     link: 'https://oliverbarta.github.io/NOTHINGG/',
     github: 'https://github.com/OliverBarta/NOTHINGG',
     images: [nothinggImg],
@@ -47,7 +47,7 @@ export const projects = [
   },
   {
     title: 'UFC Fighter',
-    desc: 'A comprehensive web app for exploring a database of every UFC fighter, their stats, fight history, and rankings. With images of fighters found using the Wikipedia API.',
+    desc: 'A website for exploring a database of every UFC fighter, their stats, fight history, and rankings. With images of fighters found using the Wikipedia API.',
     tags: ['API', 'CSV parsing'],
     link: 'https://oliverbarta.github.io/UFC-fighter/',
     github: 'https://github.com/OliverBarta/UFC-fighter',
