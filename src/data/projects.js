@@ -11,7 +11,7 @@ import workoutAppAddExercise from '../assets/WorkoutAppAddExerciseImage.PNG'
 export const projects = [
   {
     title: 'Book Site',
-    desc: 'A full-stack book reading site. I made a web scraper to get book data and put it into a Supabase database. All I need to add a new book is a link. The React frontend displays the collection, while browser LocalStorage and the Supabase database saves a users progress in a book and saves favorites. The Supabase database also stores all the comments and reactions (likes) to comments.',
+    desc: 'A book reading website. I made a web scraper to get book data and put it into a database. All I need to add a new book is a link. The React frontend displays the collection, while browser LocalStorage and the database saves a users progress in a book and saves favorites. The database also stores all the comments and reactions (likes) to comments.',
     tags: ['React', 'Node.js', 'Web-scraping', 'PostgreSQL'],
     link: 'https://book-site-six-zeta.vercel.app',
     github: 'https://github.com/OliverBarta/Book-Site',
@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     title: 'Workout App',
-    desc: 'An iOS workout app built with Swift. With a Supabase backend to allow users to see, react to, comment, and copy other people’s workout routines. I made a following system, so you can find friends, follow them, then see leaderboards for each exercise with all your friends competing.',
+    desc: 'An iOS workout app built with Swift. With a database to allow users to see, react to, comment, and copy other people’s workout routines. I made a following system, so you can find friends, follow them, then see leaderboards for each exercise with all your friends competing.',
     tags: ['Swift','Xcode','PostgreSQL'],
     link: '',
     github: 'https://github.com/OliverBarta/WorkoutApp',
@@ -38,7 +38,7 @@ export const projects = [
   },
   {
     title: 'NOTHINGG',
-    desc: 'An e-commerce clothing website. Using Supabase I made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products.',
+    desc: 'An e-commerce clothing website. I made all the listings stored in a database and made a secure authentication system allowing authorized administrators to dynamically add, edit, and remove products.',
     tags: ['React', 'Vite', 'Node.js', 'JavaScript', 'PostgreSQL'],
     link: 'https://oliverbarta.github.io/NOTHINGG/',
     github: 'https://github.com/OliverBarta/NOTHINGG',
